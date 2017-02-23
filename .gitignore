@@ -17,3 +17,4 @@ Homestead.json
 /.rocketeer/
 /.idea
 _ide_helper.php
+/public/mix-manifest.json
