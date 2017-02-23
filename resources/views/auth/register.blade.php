@@ -2,75 +2,66 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
+    <nav class="panel column is-6 is-offset-3">
+        <p class="panel-heading">Register</p>
+        <div class="panel-block">
+            <div class="column is-8 is-offset-2">
+                <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                    {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                    <label for="name" class="label">Name</label>
+                    <p class="control {{ $errors->has('name') ? ' has-icon has-icon-right' : '' }}">
+                        <input id="name" type="name" class="input {{ $errors->has('name') ? ' is-danger' : '' }}" name="name" value="{{ old('name') }}" autofocus="autofocus">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                        @if ($errors->has('name'))
+                            <span class="icon is-small">
+                                <i class="fa fa-warning"></i>
+                            </span>
+                            <span class="help is-danger">
+                                {{ $errors->first('name') }}
+                            </span>
+                        @endif
+                    </p>
 
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                    <label for="email" class="label">E-mail Address</label>
+                    <p class="control {{ $errors->has('email') ? ' has-icon has-icon-right' : '' }}">
+                        <input id="email" type="email" class="input {{ $errors->has('email') ? ' is-danger' : '' }}" name="email" value="{{ old('email') }}">
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        @if ($errors->has('email'))
+                            <span class="icon is-small">
+                                <i class="fa fa-warning"></i>
+                            </span>
+                            <span class="help is-danger">
+                                {{ $errors->first('email') }}
+                            </span>
+                        @endif
+                    </p>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                    <label for="password" class="label">Password</label>
+                    <p class="control {{ $errors->has('password') ? ' has-icon has-icon-right' : '' }}">
+                        <input id="password" type="password" class="input {{ $errors->has('password') ? ' is-danger' : '' }}" name="password">
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        @if ($errors->has('password'))
+                            <span class="icon is-small">
+                                <i class="fa fa-warning"></i>
+                            </span>
+                            <span class="help is-danger">
+                                {{ $errors->first('password') }}
+                            </span>
+                        @endif
+                    </p>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                    <label for="password-confirm" class="label">Confirm Password</label>
+                    <p class="control">
+                        <input id="password-confirm" type="password-confirm" class="input" name="password-confirm">
+                    </p>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    <button type="submit" class="button">
+                        Register
+                    </button>
+                </form>
             </div>
         </div>
-    </div>
+    </nav>
 </div>
 @endsection
