@@ -14,7 +14,7 @@
 
             <form role="form" method="POST" action="{{ url('reports') }}">
                 {{ csrf_field() }}
-                <label class="label">Url</label>
+                <label class="label">Website Url</label>
                 <p class="control {{ $errors->has('url') ? ' has-icon has-icon-right' : '' }}">
                     <input type="text" class="input {{ $errors->has('url') ? ' is-danger' : '' }}" name="url" value="{{ old('url') }}" autofocus="autofocus">
 
@@ -30,7 +30,7 @@
 
                 <label class="label">Your message</label>
                 <p class="control {{ $errors->has('reason') ? ' has-icon has-icon-right' : '' }}">
-                    <textarea class="textarea  {{ $errors->has('reason') ? ' is-danger' : '' }}" placeholder="Textarea" name="reason">{{ old('reason') }}</textarea>
+                    <textarea class="textarea  {{ $errors->has('reason') ? ' is-danger' : '' }}" placeholder="Please elaborate ..." name="reason">{{ old('reason') }}</textarea>
                     @if ($errors->has('reason'))
                         <span class="icon is-small">
                                 <i class="fa fa-warning"></i>
@@ -41,7 +41,7 @@
                     @endif
                 </p>
 
-                <p class="control">
+                {{--<p class="control">
                     <label class="radio">
                         <input type="radio" name="question">
                         Yes
@@ -50,14 +50,11 @@
                         <input type="radio" name="question">
                         No
                     </label>
-                </p>
+                </p>--}}
 
                 <div class="control is-grouped">
                     <p class="control">
-                        <button class="button is-primary">Submit</button>
-                    </p>
-                    <p class="control">
-                        <button class="button is-link">Cancel</button>
+                        <button class="button is-primary" type="submit">Submit</button>
                     </p>
                 </div>
             </form>
