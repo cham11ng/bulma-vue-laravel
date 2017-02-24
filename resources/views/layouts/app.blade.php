@@ -25,7 +25,10 @@
         <nav class="nav">
             <div class="nav-left">
                 <a href="/" class="nav-item">
-                    {{ config('app.name', 'Laravel') }}
+                    <span class="icon">
+                        <i class="fa fa-support"></i>
+                        &nbsp;{{ config('app.name', 'Laravel') }}
+                    </span>
                 </a>
             </div>
 

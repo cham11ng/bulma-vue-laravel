@@ -5,7 +5,7 @@
         <h3 class="title is-2">
             <a href="documentation/grid/tiles">
                 <span class="icon is-medium">
-                    <i class="fa fa-list"></i>
+                    <i class="fa fa-support"></i>
                 </span>
                 <strong>Reporio</strong>
             </a>
