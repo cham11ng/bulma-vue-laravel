@@ -1,15 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    <span class="icon is-medium">
+                        <i class="fa fa-support"></i>
+                    </span>
+                    <strong>Reporio</strong>
+                </h1>
+                <h2 class="subtitle">
+                    Save yourself being trolled
+                </h2>
+            </div>
+        </div>
+    </section>
     <div class="container">
-        <h3 class="title is-2">
-            <a href="documentation/grid/tiles">
-                <span class="icon is-medium">
-                    <i class="fa fa-support"></i>
-                </span>
-                <strong>Reporio</strong>
-            </a>
-        </h3>
         <h4 class="subtitle is-4">A single element for a Metro UI CSS grid</h4>
         <div class="tile is-ancestor">
             <div class="tile is-vertical is-8">
