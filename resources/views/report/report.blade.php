@@ -16,7 +16,7 @@
                 {{ csrf_field() }}
                 <label class="label">Url</label>
                 <p class="control {{ $errors->has('url') ? ' has-icon has-icon-right' : '' }}">
-                    <input type="text" class="input {{ $errors->has('url') ? ' is-danger' : '' }}" name="url" value="{{ old('url') }}">
+                    <input type="text" class="input {{ $errors->has('url') ? ' is-danger' : '' }}" name="url" value="{{ old('url') }}" autofocus="autofocus">
 
                     @if ($errors->has('url'))
                         <span class="icon is-small">
