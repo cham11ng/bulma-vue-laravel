@@ -73,9 +73,6 @@
                         </a>
                     </span>
                 @else
-                    <a href="{{ route('login') }}" class="nav-item">
-                        Home
-                    </a>
                     <a href="{{ url('reports/create') }}" class="nav-item">
                         Report
                     </a>
