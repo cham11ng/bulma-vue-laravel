@@ -53,7 +53,7 @@
 
                     <label for="password-confirm" class="label">Confirm Password</label>
                     <p class="control">
-                        <input id="password-confirm" type="password-confirm" class="input" name="password-confirm">
+                        <input id="password-confirm" type="password" class="input" name="password_confirmation">
                     </p>
 
                     <button type="submit" class="button">
