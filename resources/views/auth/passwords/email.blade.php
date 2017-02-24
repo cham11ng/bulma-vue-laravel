@@ -12,7 +12,7 @@
                     </div>
                 @endif
 
-                <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
+                <form role="form" method="POST" action="{{ route('password.email') }}">
                     {{ csrf_field() }}
 
                     <label for="email" class="label">E-Mail Address</label>

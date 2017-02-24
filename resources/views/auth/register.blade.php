@@ -6,7 +6,7 @@
         <p class="panel-heading">Register</p>
         <div class="panel-block">
             <div class="column is-8 is-offset-2">
-                <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                <form role="form" method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}
 
                     <label for="name" class="label">Name</label>
