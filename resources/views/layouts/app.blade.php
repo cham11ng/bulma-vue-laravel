@@ -107,7 +107,8 @@
                 <p>
                     <strong>Reporio</strong> by <a href="http://technorio.com">cham11ng</a>. The source code is licensed
                     <a href="http://opensource.org/licenses/mit-license.php">Technorio</a>. <br/>
-                    Copyright &copy; 2017 - {{ \Carbon\Carbon::createFromTime() }}
+                    Copyright &copy;
+                    {{ \Carbon\Carbon::parse()->year > '2017' ? '2017 -' . \Carbon\Carbon::parse()->year : \Carbon\Carbon::parse()->year }}
                 </p>
                 <p>
                     <a class="icon" href="https://technorio.com">
