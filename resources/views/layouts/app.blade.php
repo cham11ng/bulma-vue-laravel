@@ -53,16 +53,6 @@
             <!-- This "nav-menu" is hidden on mobile -->
             <!-- Add the modifier "is-active" to display it on mobile -->
             <div class="nav-right nav-menu">
-                <a class="nav-item">
-                    Home
-                </a>
-                <a class="nav-item">
-                    Report Website
-                </a>
-                <a class="nav-item">
-                    Blog
-                </a>
-
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <span class="nav-item">
@@ -80,8 +70,15 @@
                         </a>
                     </span>
                 @else
+                    <a href="{{ route('login') }}" class="nav-item">
+                        Home
+                    </a>
+                    <a href="{{ url('reports/create') }}" class="nav-item">
+                        Report
+                    </a>
+
                     <span class="nav-item">
-                        <a href="{{ route('login') }}" class="button">
+                        <a href="{{ url('profile') }}" class="button">
                             <span class="icon">
                                 <i class="fa fa-user"></i>
                             </span>
@@ -109,7 +106,7 @@
         <div class="container">
             <div class="content has-text-centered">
                 <p>
-                    <strong>Reporio</strong> by <a href="http://technorio.com">Technorio</a>. The source code is licensed
+                    <strong>Reporio</strong> by <a href="http://technorio.com">cham11ng</a>. The source code is licensed
                     <a href="http://opensource.org/licenses/mit-license.php">Technorio</a>. <br/>
                     Copyright &copy; 2017 - {{ \Carbon\Carbon::createFromTime() }}
                 </p>
