@@ -73,11 +73,10 @@
                         </a>
                     </span>
                 @else
-                    <a href="{{ url('reports/create') }}" class="nav-item">
-                        Report
-                    </a>
-
                     <span class="nav-item">
+                        <a href="{{ url('reports/create') }}" class="button">
+                            <span>Report</span>
+                        </a>
                         <a href="{{ url('profile') }}" class="button">
                             <span class="icon">
                                 <i class="fa fa-user"></i>
