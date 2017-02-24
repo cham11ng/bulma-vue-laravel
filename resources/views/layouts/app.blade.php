@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="nav">
             <div class="nav-left">
-                <a class="nav-item">
+                <a href="/" class="nav-item">
                     {{ config('app.name', 'Laravel') }}
                 </a>
             </div>
