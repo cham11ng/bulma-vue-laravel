@@ -27,7 +27,8 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        //
+        $reports = Report::all();
+        return view('report.report', compact('reports', $reports));
     }
 
     /**
@@ -37,7 +38,7 @@ class ReportsController extends Controller
      */
     public function create()
     {
-        return view('report.report');
+        return view('report.form');
     }
 
     /**
