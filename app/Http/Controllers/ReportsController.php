@@ -27,7 +27,11 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        $reports = Report::all();
+        $reports = Report::selectRaw('url, count(*) times')
+            ->groupBy('url')
+            ->orderByRaw('times desc')
+            ->get();
+
         return view('report.report', compact('reports'));
     }
 
