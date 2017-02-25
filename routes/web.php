@@ -11,6 +11,10 @@
 |
 */
 
+/*Event::listen('eloquent.created: App\Report', function () {
+    var_dump('We are ready');
+});*/
+
 Route::get('/', function () {
     return view('welcome');
 });
