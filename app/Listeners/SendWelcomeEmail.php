@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Notifications\SendWelcomeEmailNotification;
+use App\Notifications\Welcome;
 use Illuminate\Auth\Events\Registered;
 
 class SendWelcomeEmail
@@ -25,7 +25,7 @@ class SendWelcomeEmail
     public function handle(Registered $event)
     {
         $event->user->notify(
-            new SendWelcomeEmailNotification()
+            new Welcome()
         );
     }
 }

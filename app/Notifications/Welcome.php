@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class SendWelcomeEmailNotification extends Notification
+class Welcome extends Notification
 {
     use Queueable;
 
