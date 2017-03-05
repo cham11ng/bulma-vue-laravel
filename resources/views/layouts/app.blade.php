@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'Reporio') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
     <script>
@@ -120,6 +121,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/vue.js') }}"></script>
+    @yield('scripts')
+    <!-- <script type="text/javascript" src="{{ asset('js/app.js') }}"></script> -->
 </body>
 </html>
