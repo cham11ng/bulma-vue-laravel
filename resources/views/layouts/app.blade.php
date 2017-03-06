@@ -121,8 +121,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="{{ asset('js/vue.js') }}"></script>
     @yield('scripts')
-    <!-- <script type="text/javascript" src="{{ asset('js/app.js') }}"></script> -->
 </body>
 </html>

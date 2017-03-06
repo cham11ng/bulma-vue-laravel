@@ -41,6 +41,7 @@
 @endsection
 
 @section('scripts')
+	<script type="text/javascript" src="{{ asset('js/vue.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/tasks.js') }}"></script>
 @endsection

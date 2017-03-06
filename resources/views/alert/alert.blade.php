@@ -17,5 +17,6 @@
 @endsection
 
 @section('scripts')
+	<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/notification.js') }}"></script>
 @endsection
