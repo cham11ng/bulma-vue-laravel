@@ -13,13 +13,6 @@
 				<span>Go no where</span>
 			</notification>
 		</section>
-
-		<template id="notification-template">
-			<div :class="notificationClasses" v-show="show">
-				<button class="delete" @click="show = false"></button>
-				<slot></slot>
-			</div>
-		</template>
 	</div>
 @endsection
 

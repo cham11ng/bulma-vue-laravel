@@ -13,6 +13,7 @@ const { mix } = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-mix.copy('node_modules/vue/dist/vue.js', 'public/js/vue.js');
+    .js('resources/assets/js/notification.js', 'public/js')
+    .sass('resources/assets/sass/app.scss', 'public/css');
+
 mix.copy('node_modules/bulma/css/bulma.css', 'public/css/bulma.css');
