@@ -36,11 +36,11 @@
 					</button>
 				</div>
 			</nav>
-		</div>		
+		</div>
 	</section>
 @endsection
 
 @section('scripts')
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/tasks.js"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/tasks.js') }}"></script>
 @endsection
