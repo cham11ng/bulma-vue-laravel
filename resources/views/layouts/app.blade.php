@@ -8,11 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Reporio') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -23,104 +22,66 @@
 </head>
 <body>
     <div id="app">
-        <nav class="nav">
-            <div class="nav-left">
-                <a href="/" class="nav-item">
-                    <span class="icon">
-                        <i class="fa fa-support"></i>
-                        &nbsp;{{ config('app.name', 'Laravel') }}
-                    </span>
-                </a>
-            </div>
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
 
-            <div class="nav-center">
-                <a class="nav-item">
-                    <span class="icon">
-                        <i class="fa fa-facebook"></i>
-                    </span>
-                </a>
-                <a class="nav-item">
-                    <span class="icon">
-                        <i class="fa fa-twitter"></i>
-                    </span>
-                </a>
-            </div>
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-            <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-            <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-            <span class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                </div>
 
-            <!-- This "nav-menu" is hidden on mobile -->
-            <!-- Add the modifier "is-active" to display it on mobile -->
-            <div class="nav-right nav-menu">
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                    <span class="nav-item">
-                        <a href="{{ route('login') }}" class="button">
-                            <span class="icon">
-                                <i class="fa fa-sign-in"></i>
-                            </span>
-                            <span>Login</span>
-                        </a>
-                        <a href="{{ route('register') }}" class="button is-primary">
-                            <span class="icon">
-                                <i class="fa fa-user"></i>
-                            </span>
-                            <span>Register</span>
-                        </a>
-                    </span>
-                @else
-                    <span class="nav-item">
-                        <a href="{{ url('reports/create') }}" class="button">
-                            <span>Report</span>
-                        </a>
-                        <a href="{{ url('profile') }}" class="button">
-                            <span class="icon">
-                                <i class="fa fa-user"></i>
-                            </span>
-                            <span>{{ Auth::user()->name }}</span>
-                        </a>
-                        <a class="button is-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <span class="icon">
-                                <i class="fa fa-sign-out"></i>
-                            </span>
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
 
-                            <span>Logout</span>
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </span>
-                @endif
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </nav>
 
         @yield('content')
     </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="content has-text-centered">
-                <p>
-                    <strong>Reporio</strong> by <a href="http://technorio.com">cham11ng</a>. The source code is licensed
-                    <a href="http://opensource.org/licenses/mit-license.php">Technorio</a>. <br/>
-                    Copyright &copy;
-                    {{ \Carbon\Carbon::parse()->year > '2017' ? '2017 -' . \Carbon\Carbon::parse()->year : \Carbon\Carbon::parse()->year }}
-                </p>
-                <p>
-                    <a class="icon" href="https://technorio.com">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </footer>
 
     <!-- Scripts -->
-    @yield('scripts')
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
