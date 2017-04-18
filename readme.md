@@ -1,6 +1,6 @@
-# Reporio
+# Vue with Bulma
 
-This project is based on reporting website
+This is practice project of vue and bulma done in Laravel
 
 ### Installation:
 
