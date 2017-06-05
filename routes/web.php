@@ -34,6 +34,3 @@ Route::get('/tasks', function() {
 Route::get('/alerts', function() {
 	return view('alert.alert');
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
