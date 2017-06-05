@@ -22,7 +22,7 @@
     </script>
 </head>
 <body>
-<div class="container">
+<div class="container" id="app">
     <nav class="nav">
         <div class="nav-left">
             <a href="/" class="nav-item is-brand">
