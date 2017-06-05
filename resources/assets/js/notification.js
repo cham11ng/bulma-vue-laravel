@@ -1,5 +1,5 @@
 Vue.component("notification", require('./components/Notification.vue'));
 
-var appNotification = new Vue({
-    el: '#notification-app'
+let appNotification = new Vue({
+    el: '#app'
 });
