@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<section class="section" id="notification-app">
+	<section class="section">
 		<notification type="danger">
 			<span>Go to hell</span>
 		</notification>
