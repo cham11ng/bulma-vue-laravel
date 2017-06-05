@@ -25,11 +25,7 @@ Route::resource('/reports', 'ReportsController');
 
 Route::get('/profile', 'ProfileController@index');
 
-Route::get('/tasks', function() {
-	$tasks = App\Task::latest()->get();
-
-	return view('task.tasks', compact('tasks'));
-});
+Route::resource('tasks', 'TasksController');
 
 Route::get('/alerts', function() {
 	return view('alert.alert');
