@@ -2,24 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Report;
+use App\Task;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-/**
- * Class ReportsController
- * @package App\Http\Controllers
- */
-class ReportsController extends Controller
+class TasksController extends Controller
 {
-    /**
-     * ReportsController constructor.
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -27,12 +14,9 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        $reports = Report::selectRaw('url, count(*) times')
-            ->groupBy('url')
-            ->orderByRaw('times desc')
-            ->get();
+        $tasks = Task::orderBy('created_at', 'asc')->get();
 
-        return view('report.report', compact('reports'));
+        return view('task.tasks', compact('tasks'));
     }
 
     /**
@@ -42,7 +26,7 @@ class ReportsController extends Controller
      */
     public function create()
     {
-        return view('report.create');
+        return view('task.create');
     }
 
     /**
@@ -53,17 +37,7 @@ class ReportsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'url'    => 'required|min:2',
-            'reason' => 'required'
-        ]);
-
-        auth()->user()->claim(
-            new Report($request->all())
-        );
-
-        session()->flash('status', 'Report Submitted');
-        session()->flash('status_type', 'success');
+        Task::create($request->all());
 
         return back();
     }
@@ -94,7 +68,7 @@ class ReportsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)

@@ -63,93 +63,12 @@
 /******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 41);
+/******/ 	return __webpack_require__(__webpack_require__.s = 47);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 11:
-/***/ (function(module, exports, __webpack_require__) {
-
-Vue.component("notification", __webpack_require__(35));
-
-var appNotification = new Vue({
-    el: '#notification-app'
-});
-
-/***/ }),
-
-/***/ 31:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['type'],
-    data: function data() {
-        return {
-            show: true
-        };
-    },
-    computed: {
-        notificationClasses: function notificationClasses() {
-            var type = this.type;
-            return {
-                'notification': true,
-                'is-success': type == 'success',
-                'is-danger': type == 'danger',
-                'is-info': type == 'info'
-            };
-        }
-    }
-});
-
-/***/ }),
-
-/***/ 35:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(36)(
-  /* script */
-  __webpack_require__(31),
-  /* template */
-  __webpack_require__(37),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/home/user/PhpstormProjects/bulma-vue-laravel/resources/assets/js/components/Notification.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Notification.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-791a4405", Component.options)
-  } else {
-    hotAPI.reload("data-v-791a4405", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 36:
+/***/ 1:
 /***/ (function(module, exports) {
 
 module.exports = function normalizeComponent (
@@ -203,7 +122,98 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 37:
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+Vue.component("notification", __webpack_require__(5));
+
+var appNotification = new Vue({
+    el: '#app'
+});
+
+/***/ }),
+
+/***/ 3:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['type'],
+
+    data: function data() {
+        return {
+            show: true
+        };
+    },
+
+    computed: {
+        notificationClasses: function notificationClasses() {
+            var type = this.type;
+            return {
+                'notification': true,
+                'is-success': type == 'success',
+                'is-danger': type == 'danger',
+                'is-info': type == 'info'
+            };
+        }
+    }
+});
+
+/***/ }),
+
+/***/ 47:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(16);
+
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(3),
+  /* template */
+  __webpack_require__(6),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/user/PhpstormProjects/bulma-vue-laravel/resources/assets/js/components/Notification.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Notification.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-791a4405", Component.options)
+  } else {
+    hotAPI.reload("data-v-791a4405", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -215,8 +225,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "show"
     }],
     class: _vm.notificationClasses
-  }, [_c('button', {
-    staticClass: "delete",
+  }, [_c('i', {
+    staticClass: "fa fa-close pull-right",
     on: {
       "click": function($event) {
         _vm.show = false
@@ -231,14 +241,6 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-791a4405", module.exports)
   }
 }
-
-/***/ }),
-
-/***/ 41:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(11);
-
 
 /***/ })
 

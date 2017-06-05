@@ -41,17 +41,6 @@
                     @endif
                 </p>
 
-                {{--<p class="control">
-                    <label class="radio">
-                        <input type="radio" name="question">
-                        Yes
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="question">
-                        No
-                    </label>
-                </p>--}}
-
                 <div class="control is-grouped">
                     <p class="control">
                         <button class="button is-primary" type="submit">Submit</button>

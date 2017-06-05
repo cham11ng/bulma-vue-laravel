@@ -13,4 +13,5 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-
+Vue.component("notification", require('./components/Notification.vue'));
+Vue.component("modal", require('./components/Modal.vue'));
