@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <div class="columns">
         <aside class="menu column is-2">
             <figure class="image is-square">
@@ -79,7 +78,8 @@
                         <p>
                             <strong>Barbara Middleton</strong>
                             <br>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit
+                            rutrum. Nunc in tempus turpis.
                             <br>
                             <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
                         </p>
@@ -96,7 +96,8 @@
                                 <p>
                                     <strong>Sean Brown</strong>
                                     <br>
-                                    Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat.
+                                    Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit
+                                    nisl a nulla sagittis, a lobortis leo feugiat.
                                     <br>
                                     <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                                 </p>
@@ -107,7 +108,8 @@
                             </article>
 
                             <article class="media">
-                                Morbi vitae diam et purus tincidunt porttitor vel vitae augue. Praesent malesuada metus sed pharetra euismod. Cras tellus odio, tincidunt iaculis diam non, porta aliquet tortor.
+                                Morbi vitae diam et purus tincidunt porttitor vel vitae augue. Praesent malesuada metus sed pharetra euismod. Cras tellus odio, tincidunt iaculis diam non, porta
+                                aliquet tortor.
                             </article>
                         </div>
                     </article>
@@ -123,7 +125,8 @@
                                 <p>
                                     <strong>Kayli Eunice </strong>
                                     <br>
-                                    Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
+                                    Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante
+                                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
                                     <br>
                                     <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                                 </p>
@@ -149,5 +152,4 @@
             </article>
         </div>
     </div>
-</div>
 @endsection
