@@ -28,9 +28,9 @@ class ReportsController extends Controller
     public function index()
     {
         $reports = Report::selectRaw('url, count(*) times')
-            ->groupBy('url')
-            ->orderByRaw('times desc')
-            ->get();
+                         ->groupBy('url')
+                         ->orderByRaw('times desc')
+                         ->get();
 
         return view('report.report', compact('reports'));
     }
@@ -53,19 +53,24 @@ class ReportsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'url'    => 'required|min:2',
-            'reason' => 'required'
-        ]);
+        $this->validate(
+            $request,
+            [
+                'url'    => 'required|min:2',
+                'reason' => 'required'
+            ]
+        );
 
         auth()->user()->claim(
             new Report($request->all())
         );
 
-        session()->flash('status', 'Report Submitted');
-        session()->flash('status_type', 'success');
-
-        return back();
+        return back()->with(
+            [
+                'status'      => 'Report Submitted',
+                'status_type' => 'success'
+            ]
+        );
     }
 
     /**
@@ -94,7 +99,7 @@ class ReportsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
