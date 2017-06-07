@@ -32,7 +32,7 @@ class ReportNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database'];
     }
 
     /**
@@ -55,7 +55,7 @@ class ReportNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            $this->report
         ];
     }
 }
