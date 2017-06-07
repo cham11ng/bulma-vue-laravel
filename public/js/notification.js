@@ -160,9 +160,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var type = this.type;
             return {
                 'notification': true,
-                'is-success': type == 'success',
-                'is-danger': type == 'danger',
-                'is-info': type == 'info'
+                'is-success': type === 'success',
+                'is-danger': type === 'danger',
+                'is-info': type === 'info'
             };
         }
     }
@@ -191,7 +191,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/user/PhpstormProjects/bulma-vue-laravel/resources/assets/js/components/Notification.vue"
+Component.options.__file = "/home/cham11ng/PhpstormProjects/bulma-vue-laravel/resources/assets/js/components/Notification.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Notification.vue: functional components are not supported with templates, they should use render functions.")}
 

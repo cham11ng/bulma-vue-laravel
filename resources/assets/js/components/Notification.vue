@@ -17,12 +17,12 @@
 
         computed: {
             notificationClasses: function() {
-                var type = this.type;
+                let type = this.type;
                 return {
                     'notification': true,
-                    'is-success': type == 'success',
-                    'is-danger': type == 'danger',
-                    'is-info': type == 'info'
+                    'is-success': type === 'success',
+                    'is-danger': type === 'danger',
+                    'is-info': type === 'info'
                 };
             }
         }
