@@ -65,7 +65,7 @@ class ReportsController extends Controller
             new Report($request->all())
         );
 
-        return back()->with(
+        return response(
             [
                 'status'      => 'Report Submitted',
                 'status_type' => 'success'
