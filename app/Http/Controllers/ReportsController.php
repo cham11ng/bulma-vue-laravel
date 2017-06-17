@@ -65,9 +65,18 @@ class ReportsController extends Controller
             new Report($request->all())
         );
 
-        return response(
+        if ($request->expectsJson()) {
+            return response()->json(
+                [
+                    'status'      => 'Report Submitted',
+                    'status_type' => 'success'
+                ]
+            );
+        }
+
+        return back()->with(
             [
-                'status'      => 'Report Submitted',
+                'status'      => 'Report Submitted Successfully.',
                 'status_type' => 'success'
             ]
         );
