@@ -70,7 +70,8 @@ class ReportsController extends Controller
                 [
                     'status'      => 'Report Submitted',
                     'status_type' => 'success'
-                ]
+                ],
+                200
             );
         }
 

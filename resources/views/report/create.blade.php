@@ -12,7 +12,12 @@
                 </div>
             @endif
 
+            <div class="notification is-success" v-if="message">
+                @{{ message }}
+            </div>
+
             <form role="form" method="POST" action="{{ url('reports') }}" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
+                {{ csrf_field() }}
                 <label class="label" for="url">Website Url</label>
                 <p class="control">
                     <input v-model="form.url" id="url" type="text" class="input" name="url" autofocus="autofocus"/>
@@ -44,12 +49,18 @@
                     url: '',
                     reason: '',
                 }),
+                message: ''
             },
             methods: {
                 onSubmit() {
+                    const vm = this;
                     this.form.submit('post', '/reports')
-                        .then(data => console.log(data))
+                        .then(data => this.message = data.status)
                         .catch(errors => console.log(errors));
+
+                    setTimeout(function () {
+                        vm.message = '';
+                    }, 3000);
                 },
             }
         });
